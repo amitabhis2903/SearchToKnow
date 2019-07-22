@@ -15,8 +15,8 @@
 		0016043F22D7BA0900E53399 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016043E22D7BA0900E53399 /* Content.swift */; };
 		0016044322D7BAC100E53399 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016044222D7BAC100E53399 /* Service.swift */; };
 		002034E022E5C39F0088EFC2 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002034DF22E5C39F0088EFC2 /* PopupViewController.swift */; };
+		0021D93A22E623280006CE2D /* Helper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021D93922E623280006CE2D /* Helper+Extension.swift */; };
 		0059D4A222E58BAE009AE86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0059D4A122E58BAE009AE86C /* Assets.xcassets */; };
-		0059D4A522E58BE1009AE86C /* Helper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059D4A422E58BE1009AE86C /* Helper+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		0016043E22D7BA0900E53399 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		0016044222D7BAC100E53399 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		002034DF22E5C39F0088EFC2 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		0021D93922E623280006CE2D /* Helper+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper+Extension.swift"; sourceTree = "<group>"; };
 		0059D4A122E58BAE009AE86C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0059D4A422E58BE1009AE86C /* Helper+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Helper+Extension.swift"; path = "Helper/Helper+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 				0016042722D70F7F00E53399 /* LaunchScreen.storyboard */,
 				0016042A22D70F7F00E53399 /* Info.plist */,
 				0016041E22D70F7D00E53399 /* AppDelegate.swift */,
+				0021D93922E623280006CE2D /* Helper+Extension.swift */,
 				0059D4A122E58BAE009AE86C /* Assets.xcassets */,
-				0059D4A422E58BE1009AE86C /* Helper+Extension.swift */,
 			);
 			path = SearchToKnow;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				0016043F22D7BA0900E53399 /* Content.swift in Sources */,
 				0016043422D72B5C00E53399 /* SearchViewController.swift in Sources */,
 				0016044322D7BAC100E53399 /* Service.swift in Sources */,
-				0059D4A522E58BE1009AE86C /* Helper+Extension.swift in Sources */,
+				0021D93A22E623280006CE2D /* Helper+Extension.swift in Sources */,
 				002034E022E5C39F0088EFC2 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
