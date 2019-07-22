@@ -64,8 +64,7 @@ class SearchViewController: UIViewController {
     let activtyIndicator = UIActivityIndicatorView(style: .gray)
     
     var searchText: String?
-    
-    
+    var observer: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,11 +83,37 @@ class SearchViewController: UIViewController {
         setupNavBar()
         
         knowMoreBtn.addTarget(self, action: #selector(knowMoreBtnPress), for: .touchUpInside)
-        
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleSpeech), name: .speechText, object: nil)
+      
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        observer = NotificationCenter.default.addObserver(forName: .speechText, object: nil, queue: OperationQueue.main) { (notification) in
+            self.activtyIndicator.startAnimating()
+            guard let popVC = notification.object as? PopupViewController else {
+                return
+            }
+            self.searchText = popVC.searchLbl.text
+            
+            guard let text = self.searchText else {
+                return
+            }
+            print(text)
+            if text == "Say Something!" {
+                
+            }else {
+                self.getData(text: text)
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        guard let observer = observer else {
+            return
+        }
+        NotificationCenter.default.removeObserver(observer)
+    }
     
     fileprivate func setupConstraint() {
         
@@ -181,21 +206,6 @@ class SearchViewController: UIViewController {
     
     //handle notification
     @objc func handleSpeech(notification: Notification) {
-        self.activtyIndicator.startAnimating()
-        guard let popVC = notification.object as? PopupViewController else {
-            return
-        }
-         searchText = popVC.searchLbl.text
-        
-        guard let text = searchText else {
-            return
-        }
-        print(text)
-        if text == "Say Something!" {
-            
-        }else {
-            self.getData(text: text)
-        }
         
     }
     
@@ -236,6 +246,7 @@ class SearchViewController: UIViewController {
                 else  {
                     DispatchQueue.main.async {
                         self.resultText.text = self.descriptionData?.extract
+                        self.searchImage.image = nil
                         self.activtyIndicator.stopAnimating()
                         self.knowMoreBtn.isHidden = false
                     }
