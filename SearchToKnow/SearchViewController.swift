@@ -100,7 +100,9 @@ class SearchViewController: UIViewController {
             }
             print(text)
             if text == "Say Something!" {
-                
+                DispatchQueue.main.async {
+                    self.activtyIndicator.stopAnimating()
+                }
             }else {
                 self.getData(text: text)
             }
